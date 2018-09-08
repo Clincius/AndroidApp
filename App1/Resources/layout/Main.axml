@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/background_light"
+    android:weightSum="100"
+    android:minWidth="25px"
+    android:minHeight="25px">
+    <TextView
+        android:text="Create new Account"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_width="match_parent"
+        android:layout_weight="20"
+        android:layout_height="0dp"
+        android:id="@+id/CreateAccount"
+        android:textColor="@android:color/holo_blue_light"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:textSize="27sp" />
+    <Button
+        android:text="Sign In"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="15"
+        android:id="@+id/SignIn"
+        android:background="@drawable/ButtonSignInStyle"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:textSize="17sp" />
+    <TextView
+        android:text="Or"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_width="match_parent"
+        android:layout_weight="15"
+        android:layout_height="0dp"
+        android:id="@+id/orContent"
+        android:textColor="@android:color/black"
+        android:gravity="center" />
+    <Button
+        android:text="Sign Up with Email"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="15"
+        android:id="@+id/SignUp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:textSize="17sp"
+        android:background="@drawable/ButtonSignUpStyle"
+        android:drawableLeft="@drawable/mail" />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="35"
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:gravity="center">
+        <ProgressBar
+            android:visibility="invisible"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/progressBar1"
+            android:background="@drawable/ProgressBar"
+            android:layout_gravity="center"
+            android:indeterminate="true" />
+    </RelativeLayout>
+</LinearLayout>
