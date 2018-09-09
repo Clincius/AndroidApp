@@ -45,6 +45,7 @@ namespace App1
         {
             mProgressBar.Visibility = Android.Views.ViewStates.Visible;
             Thread thread = new Thread(serverLike);
+            
             thread.Start();
         }
 
@@ -54,13 +55,14 @@ namespace App1
             dialog_SignUp signUpDialog = new dialog_SignUp();
             signUpDialog.Show(transaction, "dialog fragment");
             
-
+            
             signUpDialog.MOnSignUpComplete += signUpDialog_MOnSignUpComplete;
         }
 
          void signUpDialog_MOnSignUpComplete(object sender, OnSignUpEventArgs e)
         {
             mProgressBar.Visibility = Android.Views.ViewStates.Visible;
+            
             Thread thread = new Thread(serverLike);
             thread.Start();
             
