@@ -34,7 +34,18 @@ namespace App1
 
         private void BtnSignIn_Click(object sender, EventArgs e)
         {
-            throw new NotImplementedException();
+            FragmentTransaction transaction = FragmentManager.BeginTransaction();
+            dialog_SignIn signInDialog = new dialog_SignIn();
+            signInDialog.Show(transaction, "dialog fragment");
+
+            signInDialog.MOnSignInComplete += SignInDialog_MOnSignInComplete;
+        }
+
+        private void SignInDialog_MOnSignInComplete(object sender, OnSignUpEventArgs e)
+        {
+            mProgressBar.Visibility = Android.Views.ViewStates.Visible;
+            Thread thread = new Thread(serverLike);
+            thread.Start();
         }
 
         void btnSignUp_Click(object sender, EventArgs e)

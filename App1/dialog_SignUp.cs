@@ -40,7 +40,12 @@ namespace App1
             Email = email;
             Password = password;
         }
-
+        public OnSignUpEventArgs( string email, string password) : base()
+        {
+            
+            Email = email;
+            Password = password;
+        }
 
 
     }
@@ -79,6 +84,45 @@ namespace App1
             Dialog.Window.RequestFeature(WindowFeatures.NoTitle);
             base.OnActivityCreated(savedInstanceState);
             Dialog.Window.Attributes.WindowAnimations = Resource.Style.dialog_animation;
+        }
+    }
+
+
+    class dialog_SignIn : DialogFragment
+    {
+        
+        private EditText txtEmail;
+        private EditText txtPassword;
+        private Button btnSignIn;
+
+        public event EventHandler<OnSignUpEventArgs> MOnSignInComplete;
+        public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
+        {
+            base.OnCreateView(inflater, container, savedInstanceState);
+
+            var view = inflater.Inflate(Resource.Layout.dialogSignIn, container, false);
+
+            
+            txtEmail = view.FindViewById<EditText>(Resource.Id.txtEmail);
+            txtPassword = view.FindViewById<EditText>(Resource.Id.txtPassword);
+            btnSignIn = view.FindViewById<Button>(Resource.Id.btnSignIn);
+
+            btnSignIn.Click += BtnSignIn_Click;
+            return view;
+        }
+
+        void BtnSignIn_Click(object sender, EventArgs e)
+        {
+            //User has clicked the sign in button
+            MOnSignInComplete.Invoke(this, new OnSignUpEventArgs(txtEmail.Text, txtPassword.Text));
+            this.Dismiss();
+        }
+
+        public override void OnActivityCreated(Bundle savedInstanceState)
+        {
+            Dialog.Window.RequestFeature(WindowFeatures.NoTitle);
+            base.OnActivityCreated(savedInstanceState);
+            Dialog.Window.Attributes.WindowAnimations = Resource.Style.dialog_animationDown;
         }
     }
 }

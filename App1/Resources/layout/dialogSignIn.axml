@@ -4,32 +4,19 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:minWidth="350dp"
-    android:minHeight="450dp">
-    <EditText
-        android:id="@+id/txtFirstName"
-        
-        android:layout_width="match_parent"
-        android:layout_height="45dp"
-		android:background="@drawable/edit_style"
-        android:layout_marginBottom="5dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:layout_marginTop="50dp"
-        android:hint="First Name"
-		android:textColorHint="#84888e"
-        android:paddingLeft="10dp"
-        android:textColor="#000" />
+    android:minHeight="400dp">
+    
     <EditText
         android:layout_below="@id/txtFirstName"
         android:inputType="textEmailAddress"
         android:id="@+id/txtEmail"
-        android:background="@drawable/edit_style"
+        android:background="@drawable/edit_stylesignin"
         android:layout_width="match_parent"
         android:layout_height="45dp"
         android:layout_marginBottom="5dp"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="70dp"
         android:hint="Email"
 		android:textColorHint="#84888e"
         android:paddingLeft="10dp"
@@ -37,7 +24,7 @@
     <EditText
         android:inputType="textPassword"
         android:id="@+id/txtPassword"
-        android:background="@drawable/edit_style"
+        android:background="@drawable/edit_stylesignin"
         android:layout_width="match_parent"
         android:layout_height="45dp"
         android:layout_marginLeft="20dp"
@@ -54,10 +41,10 @@
         android:layout_below="@id/txtPassword"
         android:layout_marginTop="50dp">
         <Button
-            android:text="Sing Up!"
+            android:text="Sing In"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/btnDialogEmail"
+            android:id="@+id/btnSignIn"
             android:textSize="20dp"
             android:textColor="#fff"
             android:textStyle="bold"
@@ -66,7 +53,7 @@
             android:paddingRight="5dp"
             android:height="70dp"
             android:paddingTop="2dp"
-            android:background="@drawable/ButtonSignUpStyle"
+            android:background="@drawable/ButtonSignInStyle"
             android:layout_centerHorizontal="true"
             android:layout_marginLeft="30dp" />
     </RelativeLayout>
